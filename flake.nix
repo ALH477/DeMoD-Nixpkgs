@@ -10,7 +10,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        
+
         pythonEnv = pkgs.python3.withPackages (ps: with ps; [
           textual
           httpx
@@ -49,9 +49,9 @@
             echo "Or:  nix run"
             echo ""
             echo "Dependencies installed:"
-            echo "  ✓ Python 3 with textual and httpx"
-            echo "  ✓ Nix package manager"
-            echo "  ✓ Clipboard utilities"
+            echo "  Python 3 with textual and httpx"
+            echo "  Nix package manager"
+            echo "  Clipboard utilities"
             echo ""
           '';
         };
@@ -99,103 +99,6 @@
               type = types.package;
               default = self.packages.${pkgs.system}.default;
               description = "The demod-nixpkgs package to use";
-            };
-          };
-
-          config = mkIf cfg.enable {
-            home.packages = [ cfg.package ];
-          };
-        };
-    };
-}
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        
-        pythonEnv = pkgs.python3.withPackages (ps: with ps; [
-          textual
-          httpx
-        ]);
-
-        nixpkg-tui = pkgs.writeScriptBin "nixpkg-tui" ''
-          #!${pkgs.bash}/bin/bash
-          exec ${pythonEnv}/bin/python ${./nixpkg_tui.py} "$@"
-        '';
-
-      in
-      {
-        # Main package output
-        packages = {
-          default = nixpkg-tui;
-          nixpkg-tui = nixpkg-tui;
-        };
-
-        # Development shell with dependencies
-        devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            pythonEnv
-            nix
-            # Clipboard support (optional)
-            xclip
-            wl-clipboard
-          ];
-
-          shellHook = ''
-            echo "NixPkg TUI Development Environment"
-            echo "==================================="
-            echo "Run: python nixpkg_tui.py"
-            echo "Or:  nix run"
-            echo ""
-            echo "Dependencies installed:"
-            echo "  - Python 3 with textual and httpx"
-            echo "  - Nix package manager"
-            echo "  - Clipboard utilities"
-          '';
-        };
-
-        # App entry point for 'nix run'
-        apps.default = {
-          type = "app";
-          program = "${nixpkg-tui}/bin/nixpkg-tui";
-        };
-      }
-    ) // {
-      # NixOS module for system-wide installation
-      nixosModules.default = { config, lib, pkgs, ... }:
-        with lib;
-        let
-          cfg = config.programs.nixpkg-tui;
-        in
-        {
-          options.programs.nixpkg-tui = {
-            enable = mkEnableOption "NixPkg TUI package manager";
-
-            package = mkOption {
-              type = types.package;
-              default = self.packages.${pkgs.system}.default;
-              description = "The nixpkg-tui package to use";
-            };
-          };
-
-          config = mkIf cfg.enable {
-            environment.systemPackages = [ cfg.package ];
-          };
-        };
-
-      # Home Manager module
-      homeManagerModules.default = { config, lib, pkgs, ... }:
-        with lib;
-        let
-          cfg = config.programs.nixpkg-tui;
-        in
-        {
-          options.programs.nixpkg-tui = {
-            enable = mkEnableOption "NixPkg TUI package manager";
-
-            package = mkOption {
-              type = types.package;
-              default = self.packages.${pkgs.system}.default;
-              description = "The nixpkg-tui package to use";
             };
           };
 
