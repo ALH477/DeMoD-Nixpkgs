@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+.env.*
+*.log
+.result
+result-*
+.nix-outputs/
+.icebox/
