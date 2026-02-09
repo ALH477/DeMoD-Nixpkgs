@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Nix Flakes](https://img.shields.io/badge/Nix-Flakes-blue.svg)](https://nixos.wiki/wiki/Flakes)
-[![Made by DeMoD LLC](https://img.shields.io/badge/Made%20by-DeMoD%20LLC-00d4ff.svg)](https://demod.llc)
+[![Made by DeMoD LLC](https://img.shields.io/badge/Made%20by-DeMoD%20LLC-00d4ff.svg)](https://demod.ltd)
 
 A modern, elegant Terminal User Interface (TUI) for discovering, managing, and installing Nix packages with real-time search powered by the official NixOS API.
 
@@ -14,18 +14,18 @@ A modern, elegant Terminal User Interface (TUI) for discovering, managing, and i
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-## ✨ Features
+##  Features
 
-- 🔍 **Lightning-Fast Search** - Real-time package discovery via NixOS API
-- 🎨 **Beautiful Interface** - Carefully designed TUI with custom theming
-- 📦 **One-Click Install** - Install packages directly from the interface
-- 🗂️ **Smart Management** - Organize packages by category in a separate flake
-- 🔖 **Flake Integration** - Generate snippets for your Nix configurations
-- ⌨️ **Keyboard First** - Efficient navigation with intuitive shortcuts
-- 📋 **Rich Details** - View descriptions, versions, licenses, and homepage links
-- 🏗️ **Two-Flake Architecture** - Clean separation of tool and package data
+-  **Lightning-Fast Search** - Real-time package discovery via NixOS API
+-  **Beautiful Interface** - Carefully designed TUI with custom theming
+-  **One-Click Install** - Install packages directly from the interface
+-  **Smart Management** - Organize packages by category in a separate flake
+-  **Flake Integration** - Generate snippets for your Nix configurations
+-  **Keyboard First** - Efficient navigation with intuitive shortcuts
+-  **Rich Details** - View descriptions, versions, licenses, and homepage links
+-  **Two-Flake Architecture** - Clean separation of tool and package data
 
-## 🖼️ Preview
+##  Preview
 
 ```
 ┌─ Package Information ─────────────────────────────────────┐
@@ -53,7 +53,7 @@ Shell Environment:
   $ nix shell nixpkgs#python3
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Run Instantly (No Installation)
 
@@ -90,7 +90,7 @@ nix run
 | `Enter` | View package details |
 | `Tab` | Switch between tabs |
 
-## 🏗️ Architecture
+##  Architecture
 
 DeMoD Nixpkgs uses a **two-flake system** for clean separation:
 
@@ -108,18 +108,18 @@ DeMoD Nixpkgs uses a **two-flake system** for clean separation:
 
 This design means updates to the tool never affect your package selections.
 
-## 📦 Managing Packages
+##  Managing Packages
 
 ### Add Packages via TUI
 
 1. Search for a package (e.g., "python")
 2. Select it from results
 3. Choose a category:
-   - 💻 Development
-   - 📊 Productivity
-   - 🎨 Media
-   - 🔧 Utilities
-   - ⭐ Custom
+   -  Development
+   -  Productivity
+   -  Media
+   -  Utilities
+   -  Custom
 4. Press `A` or click "Add to Managed"
 
 The package is automatically added to `~/.demod-nixpkgs/managed-packages/packages.nix`
@@ -181,7 +181,7 @@ Add to your `/etc/nixos/flake.nix`:
 }
 ```
 
-## 🛠️ Development
+## Development
 
 ### Enter Development Shell
 
@@ -201,14 +201,14 @@ python demod_nixpkgs.py
 nix build
 ```
 
-## 📚 Documentation
+##  Documentation
 
 - [**ARCHITECTURE.md**](ARCHITECTURE.md) - Detailed architecture explanation
 - [**COMPLETE-EXAMPLE.md**](COMPLETE-EXAMPLE.md) - Full integration examples
 - [**managed-packages/README.md**](managed-packages/README.md) - Managed packages guide
 - [**QUICKSTART.md**](QUICKSTART.md) - Getting started guide
 
-## 🎯 Use Cases
+##  Use Cases
 
 ### For Developers
 - Quickly discover and try new development tools
@@ -232,7 +232,7 @@ custom = with pkgs; [
 - Version control package selections
 - Deploy consistent environments
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -244,29 +244,29 @@ nix develop
 python demod_nixpkgs.py
 ```
 
-## 📜 License
+##  License
 
 MIT License - Copyright (c) 2026 DeMoD LLC
 
 See [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with [Textual](https://github.com/Textualize/textual) TUI framework
 - Powered by [NixOS Package Search API](https://search.nixos.org/)
 - Inspired by the Nix community's commitment to declarative systems
 
-## 📞 Support
+##  Support
 
-- **Issues**: [GitHub Issues](https://github.com/demod-llc/nixpkgs/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/demod-llc/nixpkgs/discussions)
+- **Issues**: [GitHub Issues](https://github.com/ALH477/nixpkgs/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/ALH477/nixpkgs/discussions)
 - **NixOS Community**: [discourse.nixos.org](https://discourse.nixos.org/)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [DeMoD LLC](https://demod.llc)**
+**Made with poop by [DeMoD LLC](https://demod.llc)**
 
 *Beautiful Package Management for Nix*
 
