@@ -266,7 +266,7 @@ See [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
-**Made with poop by [DeMoD LLC](https://demod.llc)**
+**Made with poop by [DeMoD LLC](https://demod.ltd)**
 
 *Beautiful Package Management for Nix*
 
