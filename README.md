@@ -58,20 +58,20 @@ Shell Environment:
 ### Run Instantly (No Installation)
 
 ```bash
-nix run github:demod-llc/nixpkgs
+nix run github:ALH477/DeMoD-Nixpkgs
 ```
 
 ### Install Globally
 
 ```bash
-nix profile install github:demod-llc/nixpkgs
+nix profile install github:ALH477/DeMoD-Nixpkgs
 demod-nixpkgs
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/demod-llc/nixpkgs.git
+git clone https://github.com/ALH477/DeMoD-Nixpkgs.git
 cd nixpkgs
 nix run
 ```
